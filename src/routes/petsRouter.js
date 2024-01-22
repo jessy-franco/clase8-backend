@@ -2,17 +2,18 @@ import {Router} from "express";
 
 const router = Router();
 
-let USERS = [];
+let PETS = [];
 
 router.get("/",(req, res)=>{
-    res.status(200).send(USERS)
+    res.status(200).send(PETS)
 });
 
 router.post("/", (req, res)=>{
-
+/* pets: "nombre de mascota" */
     let body = res.body;
-    USERS.push(body.user);
+    PETS.push(body.PET);
     res.status(201).send({status:201})
 })
+
 
 export default router
