@@ -1,14 +1,14 @@
 import {Router} from "express";
 
-const router = Router();
+const routerPet = Router();
 
 let PETS = [];
 
-router.get("/",(req, res)=>{
+routerPet.get("/",(req, res)=>{
     res.status(200).send(PETS)
 });
 
-router.post("/", (req, res)=>{
+routerPet.post("/", (req, res)=>{
 /* pets: "nombre de mascota" */
     let body = res.body;
     PETS.push(body.PET);
@@ -16,4 +16,4 @@ router.post("/", (req, res)=>{
 })
 
 
-export default router
+export default routerPet
